@@ -5,6 +5,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
+    @book_new = Book.new
   end
 
   def create
@@ -26,5 +28,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end
-  
+
 end
