@@ -4,14 +4,14 @@
     <div class="col-md-3">
       <h1>User info</h1>
       <table>
-        <tr>profile_image</tr>
+        <tr><%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: 'no_image.jpg' %></tr>
         <tr>
           <th>name</th>
-          <td>user_name</td>
+          <td><%= @book.user.name %></td>
         </tr>
         <tr>
           <th>introduction</th>
-          <td>user_introduction</td>
+          <td><%= @book.user.introduction %></td>
         </tr>
       </table>
 
@@ -35,7 +35,7 @@
       <h1>Books detail</h1>
       <table>
         <tr>
-          <td>profile_image user_name</td>
+          <td><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: 'no_image.jpeg' %></td>
           <td><%= link_to "#{@book.title}", book_path(@book) %></td>
           <td><%= @book.body %></td>
         </tr>
