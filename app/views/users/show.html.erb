@@ -15,7 +15,13 @@
         </tr>
       </table>
 
-      <div class="edit-profile">Edit</div>
+      <div class="edit-profile">
+        <% if @user.id == current_user.id %>
+          <%= link_to 'Edit', edit_user_path(current_user) %>
+        <% else %>
+          <%= link_to 'Edit', user_path(current_user) %>
+        <% end %>
+      </div>
 
       <div class="new-book">
         <h1>New book</h1>

@@ -15,7 +15,9 @@
         </tr>
       </table>
 
-      <div class="edit-profile">Edit</div>
+      <div class="edit-profile">
+        <%= link_to 'Edit', edit_user_path(current_user) %>
+      </div>
 
       <div class="new-book">
         <h1>New book</h1>
