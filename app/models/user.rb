@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  validates :name, uniqueness: true, length: { minimum: 2, maximum: 20}
+  validates :introduction, lingth: {maximum: 50}
+
   def books
     return Book.where(user_id: self.id)
   end
